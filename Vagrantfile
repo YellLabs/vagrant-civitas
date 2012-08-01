@@ -36,6 +36,9 @@ nodes   = {
     :rk01     => {},
     :rk02     => {},
 
+    :ml01     => {},
+    :ml02     => {},
+
     # Administration.
     :pup51    => {},
     :log51    => {},
