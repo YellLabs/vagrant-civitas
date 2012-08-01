@@ -48,6 +48,10 @@ nodes   = {
     :aft01    => {},
     :bld01    => {},
     :tm01     => {},
+
+    # RPM building.
+    :rpmbuild5 => {},
+    :rpmbuild6 => { :box => 'centos62-puppet26' }
 }
 
 Vagrant::Config.run do |config|
