@@ -40,12 +40,12 @@ nodes   = {
     :ml02     => {},
 
     # Administration.
-    :pup51    => {},
-    :log51    => {},
-    :log52    => {},
-    :log53    => {},
-    :log54    => {},
-    :log55    => {},
+    :pup51    => { :box => 'centos62-puppet26' },
+    :log51    => { :box => 'centos62-puppet26' },
+    :log52    => { :box => 'centos62-puppet26' },
+    :log53    => { :box => 'centos62-puppet26' },
+    :log54    => { :box => 'centos62-puppet26' },
+    :log55    => { :box => 'centos62-puppet26' },
 
     # Build and test.
     :aft01    => {},
@@ -54,7 +54,7 @@ nodes   = {
 
     # RPM building.
     :rpmbuild5 => {},
-    :rpmbuild6 => { :box => 'centos62-puppet26' }
+    :rpmbuild6 => { :box => 'centos62-puppet26' },
 }
 
 Vagrant::Config.run do |config|
