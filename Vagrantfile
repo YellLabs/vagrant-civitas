@@ -12,45 +12,46 @@ box     = "centos58-puppet26"
 domain  = "vagrant.civitas.yb.int"
 nodes   = {
     # Load balancing and caching.
-    :wc01     => {},
-    :wc02     => {},
+    :wc01     => { :ip => '172.16.201.11' },
+    :wc02     => { :ip => '172.16.201.12' },
 
     # Frontends.
-    :ja01     => {},
-    :ja02     => {},
+    :ja01     => { :ip => '172.16.201.50' },
+    :ja02     => { :ip => '172.16.201.51' },
 
-    :pla01    => {},
-    :pla02    => {},
+    :pla01    => { :ip => '172.16.201.60' },
+    :pla02    => { :ip => '172.16.201.61' },
 
     # Datastores.
-    :db01     => {},
+    :db01     => { :ip => '172.16.201.100' },
 
-    :mq01     => {},
+    :mq01     => { :ip => '172.16.201.110' },
 
-    :es01     => {},
-    :es02     => {},
+    :es01     => { :ip => '172.16.201.120' },
+    :es02     => { :ip => '172.16.201.121' },
 
-    :mgd01    => {},
-    :mgd02    => {},
+    :mgd01    => { :ip => '172.16.201.130' },
+    :mgd02    => { :ip => '172.16.201.131' },
 
-    :rk01     => {},
-    :rk02     => {},
+    :rk01     => { :ip => '172.16.201.140' },
+    :rk02     => { :ip => '172.16.201.141' },
 
-    :ml01     => {},
-    :ml02     => {},
+    :ml01     => { :ip => '172.16.201.150' },
+    :ml02     => { :ip => '172.16.201.151' },
 
     # Administration.
-    :pup51    => { :box => 'centos62-puppet26' },
-    :log51    => { :box => 'centos62-puppet26' },
-    :log52    => { :box => 'centos62-puppet26' },
-    :log53    => { :box => 'centos62-puppet26' },
-    :log54    => { :box => 'centos62-puppet26' },
-    :log55    => { :box => 'centos62-puppet26' },
+    :pup51    => { :ip => '172.16.201.200', :box => 'centos62-puppet26' },
+
+    :log51    => { :ip => '172.16.201.210', :box => 'centos62-puppet26' },
+    :log52    => { :ip => '172.16.201.211', :box => 'centos62-puppet26' },
+    :log53    => { :ip => '172.16.201.212', :box => 'centos62-puppet26' },
+    :log54    => { :ip => '172.16.201.213', :box => 'centos62-puppet26' },
+    :log55    => { :ip => '172.16.201.214', :box => 'centos62-puppet26' },
 
     # Build and test.
-    :aft01    => {},
-    :bld01    => {},
-    :tm01     => {},
+    :aft01    => { :ip => '172.16.201.220' },
+    :bld01    => { :ip => '172.16.201.221' },
+    :tm01     => { :ip => '172.16.201.222' },
 
     # RPM building.
     :rpmbuild5 => {},
