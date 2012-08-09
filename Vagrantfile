@@ -40,7 +40,7 @@ nodes   = {
     :ml02     => { :ip => '172.16.201.151' },
 
     # Administration.
-    :pup51    => { :ip => '172.16.201.200', :box => 'centos62-puppet26' },
+    :pup51    => { :ip => '172.16.201.200', :box => 'centos62-puppet26', :memory => 1024 },
 
     :log51    => { :ip => '172.16.201.210', :box => 'centos62-puppet26' },
     :log52    => { :ip => '172.16.201.211', :box => 'centos62-puppet26' },
