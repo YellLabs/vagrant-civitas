@@ -49,9 +49,9 @@ nodes   = {
     :log55    => { :ip => '172.16.201.214', :box => 'centos62-puppet26' },
 
     # Build and test.
-    :aft01    => { :ip => '172.16.201.220' },
-    :bld01    => { :ip => '172.16.201.221' },
-    :tm01     => { :ip => '172.16.201.222' },
+    :aft01    => { :ip => '172.16.201.220', :box => 'centos62-puppet26' },
+    :bld01    => { :ip => '172.16.201.221', :box => 'centos62-puppet26' },
+    :tm01     => { :ip => '172.16.201.222', :box => 'centos62-puppet26' },
 
     # RPM building.
     :rpmbuild5 => {},
