@@ -8,9 +8,12 @@
 #                   Note: the default value for an existing box will not be
 #                   restored until the box is destroyed and recreated.
 
-box     = "centos58-puppet26"
-domain  = "vagrant.civitas.yb.int"
-nodes   = {
+box_el5     = "centos58-puppet26"
+box_el6     = "centos62-puppet26"
+box_default = box_el5
+
+domain      = "vagrant.civitas.yb.int"
+nodes       = {
     # Load balancing and caching.
     :wc01     => { :ip => '172.16.201.11' },
     :wc02     => { :ip => '172.16.201.12' },
@@ -40,28 +43,28 @@ nodes   = {
     :ml02     => { :ip => '172.16.201.151' },
 
     # Administration.
-    :pup51    => { :ip => '172.16.201.200', :box => 'centos62-puppet26', :memory => 1024 },
+    :pup51    => { :ip => '172.16.201.200', :box => box_el6, :memory => 1024 },
 
-    :log51    => { :ip => '172.16.201.210', :box => 'centos62-puppet26' },
-    :log52    => { :ip => '172.16.201.211', :box => 'centos62-puppet26' },
-    :log53    => { :ip => '172.16.201.212', :box => 'centos62-puppet26' },
-    :log54    => { :ip => '172.16.201.213', :box => 'centos62-puppet26' },
-    :log55    => { :ip => '172.16.201.214', :box => 'centos62-puppet26' },
+    :log51    => { :ip => '172.16.201.210', :box => box_el6 },
+    :log52    => { :ip => '172.16.201.211', :box => box_el6 },
+    :log53    => { :ip => '172.16.201.212', :box => box_el6 },
+    :log54    => { :ip => '172.16.201.213', :box => box_el6 },
+    :log55    => { :ip => '172.16.201.214', :box => box_el6 },
 
     # Build and test.
-    :aft01    => { :ip => '172.16.201.220', :box => 'centos62-puppet26' },
-    :bld01    => { :ip => '172.16.201.221', :box => 'centos62-puppet26' },
-    :tm01     => { :ip => '172.16.201.222', :box => 'centos62-puppet26' },
+    :aft01    => { :ip => '172.16.201.220', :box => box_el6 },
+    :bld01    => { :ip => '172.16.201.221', :box => box_el6 },
+    :tm01     => { :ip => '172.16.201.222', :box => box_el6 },
 
     # RPM building.
     :rpmbuild5 => {},
-    :rpmbuild6 => { :box => 'centos62-puppet26' },
+    :rpmbuild6 => { :box => box_el6 },
 }
 
 Vagrant::Config.run do |config|
     nodes.each do |node_name, node_opts|
         config.vm.define node_name do |c|
-            c.vm.box = node_opts[:box] || box
+            c.vm.box = node_opts[:box] || box_default
 
             # Host only NICs on EL5 take a long time.
             c.ssh.max_tries = 100
